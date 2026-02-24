@@ -89,52 +89,86 @@ export default function Projects() {
 
     return (
         <section id="projects" className="py-24 md:py-36 bg-[#f7f4ef]">
-
-            <div className="max-w-5xl mx-auto px-6">
-                <div className="flex items-center gap-4 mb-4" data-aos="fade-right">
-                    <span className="text-[10px] md:text-[11px] tracking-[.22em] uppercase text-[#c9a96e]">PROJECTS</span>
+            <div className="max-w-5xl mx-auto px-6" data-aos="fade-up">
+                <div className="flex items-center gap-4 mb-4">
+                    <span className="text-[10px] md:text-[11px] tracking-[.22em] uppercase text-[#c9a96e]">
+                        PROJECTS
+                    </span>
                     <span className="h-px bg-[#c9a96e]/30 w-12" aria-hidden="true" />
                 </div>
-                <div data-aos="fade-right" className="mb-12">
+                <div className="mb-12">
                     <h2 className="font-serif text-5xl md:text-6xl leading-[1.05] text-[#333] mb-16">
-                        My<br /><em className="italic text-[#c9a96e]">Projects</em>
+                        My
+                        <br />
+                        <em className="italic text-[#c9a96e]">Projects</em>
                     </h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
                     {PROJECTS_DATA.map(p => (
                         <a
-                            key={p.id} href={p.liveUrl} target="_blank" rel="noreferrer" data-aos="fade-right"
-                            className={twMerge(p.span, "group bg-white rounded-md overflow-hidden shadow-sm hover:-translate-y-1.5 transition-all duration-300 relative block")}
+                            key={p.id}
+                            href={p.liveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            data-aos="fade-up"
+                            className={twMerge(
+                                p.span,
+                                "group bg-white rounded-md overflow-hidden shadow-sm hover:-translate-y-1.5 transition-all duration-300 relative block",
+                            )}
                             onMouseEnter={() => swipers[p.id]?.autoplay.start()}
-                            onMouseLeave={() => { swipers[p.id]?.autoplay.stop(); swipers[p.id]?.slideTo(0); }}
-                        >
+                            onMouseLeave={() => {
+                                swipers[p.id]?.autoplay.stop();
+                                swipers[p.id]?.slideTo(0);
+                            }}>
                             <div className={twMerge("relative overflow-hidden", p.aspect)}>
                                 <Swiper
-                                    modules={[Autoplay, EffectFade]} effect="fade" speed={500} loop={true}
+                                    modules={[Autoplay, EffectFade]}
+                                    effect="fade"
+                                    speed={500}
+                                    loop={true}
                                     autoplay={{ delay: 700, disableOnInteraction: false }}
-                                    onSwiper={(s) => { s.autoplay.stop(); setSwipers(prev => ({ ...prev, [p.id]: s })); }}
-                                    className="w-full h-full pointer-events-none"
-                                >
+                                    onSwiper={s => {
+                                        s.autoplay.stop();
+                                        setSwipers(prev => ({ ...prev, [p.id]: s }));
+                                    }}
+                                    className="w-full h-full pointer-events-none">
                                     {p.images.map((img, i) => (
-                                        <SwiperSlide key={i}><img src={img} className="w-full h-full object-cover" alt="" /></SwiperSlide>
+                                        <SwiperSlide key={i}>
+                                            <img
+                                                src={img}
+                                                className="w-full h-full object-cover"
+                                                alt=""
+                                            />
+                                        </SwiperSlide>
                                     ))}
                                 </Swiper>
 
                                 <div className="absolute inset-0 bg-[#1a1714]/60 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3">
                                     <div className={btnClass}>Live</div>
                                     <button
-                                        onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(p.githubUrl, "_blank"); }}
-                                        className={btnClass}
-                                    >
+                                        onClick={e => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            window.open(p.githubUrl, "_blank");
+                                        }}
+                                        className={btnClass}>
                                         GitHub
                                     </button>
                                 </div>
                             </div>
 
                             <div className="py-3 px-5 relative z-0">
-                                <h3 className={twMerge("font-serif text-[#1a1714] mb-0.5", p.id === "GentleMonster" ? "text-xl" : "text-lg")}>{p.title}</h3>
-                                <p className="text-[11px] text-[#7a7168] leading-relaxed">{p.desc}</p>
+                                <h3
+                                    className={twMerge(
+                                        "font-serif text-[#1a1714] mb-0.5",
+                                        p.id === "GentleMonster" ? "text-xl" : "text-lg",
+                                    )}>
+                                    {p.title}
+                                </h3>
+                                <p className="text-[11px] text-[#7a7168] leading-relaxed">
+                                    {p.desc}
+                                </p>
                             </div>
                         </a>
                     ))}
