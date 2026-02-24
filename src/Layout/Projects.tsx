@@ -89,13 +89,15 @@ export default function Projects() {
         <section id="projects" className="py-24 md:py-36 bg-[#f7f4ef]">
             <div className="max-w-5xl mx-auto px-6">
                 <div className="mb-12" data-aos="fade-right">
-                    <p className="flex items-center gap-3 text-[11px] tracking-[.18em] uppercase text-[#c9a96e] mb-3">
-                        PROJECTS <span className="flex-1 h-px bg-[#e8d9bc] max-w-[80px]" />
-                    </p>
-                    <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-                        Selected
-                        <br />
-                        Projects
+                    <h2
+                        className={twMerge(
+                            "font-serif text-5xl md:text-6xl leading-[1.05]",
+                            "text-[#333] mb-16"
+                        )}
+                        data-aos="fade-up"
+                    >
+                        My<br />
+                        <em className="italic text-[#c9a96e]">Projects</em>
                     </h2>
                 </div>
 
