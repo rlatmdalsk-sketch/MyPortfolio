@@ -87,7 +87,7 @@ export default function Projects() {
     return (
         <section id="projects" className="py-24 md:py-36 bg-[#f7f4ef]">
             <div className="max-w-5xl mx-auto px-6">
-                <div data-aos="fade-right" className="mb-12" >
+                <div data-aos="fade-right" className="mb-12">
                     <h2 className="font-serif text-5xl md:text-6xl leading-[1.05] text-[#333] mb-16">
                         My
                         <br />
@@ -137,16 +137,19 @@ export default function Projects() {
                                 </Swiper>
 
                                 <div className="absolute inset-0 bg-[#1a1714]/60 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3 pointer-events-none">
-                                    <div className="px-4 py-1.5 border border-white/60 text-white text-[11px] uppercase hover:bg-white hover:text-black transition-colors pointer-events-auto cursor-pointer">
+                                    <a
+                                        href={p.liveUrl}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="px-4 py-1.5 border border-white/60 text-white text-[11px] uppercase hover:bg-white hover:text-black transition-colors pointer-events-auto cursor-pointer">
                                         Live
-                                    </div>
+                                    </a>
 
                                     <a
                                         href={p.githubUrl}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="px-4 py-1.5 border border-white/60 text-white text-[11px] uppercase hover:bg-white hover:text-black transition-colors pointer-events-auto"
-                                    >
+                                        className="px-4 py-1.5 border border-white/60 text-white text-[11px] uppercase hover:bg-white hover:text-black transition-colors pointer-events-auto">
                                         GitHub
                                     </a>
                                 </div>
