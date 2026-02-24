@@ -8,7 +8,7 @@ function App() {
     return (
         <>
             <Header />
-            <main className={twMerge("flex", "flex-col")}>
+            <main className={twMerge("flex", "flex-col","bg-[#f7f4ef]")}>
                 <section>
                     <About />
                 </section>
