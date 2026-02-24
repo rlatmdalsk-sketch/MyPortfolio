@@ -89,7 +89,12 @@ export default function Projects() {
 
     return (
         <section id="projects" className="py-24 md:py-36 bg-[#f7f4ef]">
+
             <div className="max-w-5xl mx-auto px-6">
+                <div className="flex items-center gap-4 mb-4" data-aos="fade-right">
+                    <span className="text-[10px] md:text-[11px] tracking-[.22em] uppercase text-[#c9a96e]">PROJECTS</span>
+                    <span className="h-px bg-[#c9a96e]/30 w-12" aria-hidden="true" />
+                </div>
                 <div data-aos="fade-right" className="mb-12">
                     <h2 className="font-serif text-5xl md:text-6xl leading-[1.05] text-[#333] mb-16">
                         My<br /><em className="italic text-[#c9a96e]">Projects</em>
