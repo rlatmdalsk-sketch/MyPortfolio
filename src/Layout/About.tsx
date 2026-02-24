@@ -1,20 +1,17 @@
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { BsGithub } from "react-icons/bs";
 
 
 /* 데이터 */
 const infoList = [
-    { label: "Name",     value: "홍길동" },
-    { label: "Role",     value: "Web Publisher / Front-End" },
-    { label: "Location", value: "Seoul, Korea" },
-    { label: "Email",    value: "your@email.com" },
+    { label: "Name",     value: "김승민" },
+    { label: "Role",     value: "Web Publisher / Marketer" },
+    { label: "Location", value: "Siheung, Korea" },
+    { label: "Email",    value: "rlatmdalsk@naver.com" },
 ];
 
-const stats = [
-    { num: "3",  suffix: "+", desc: "Years\nExperience" },
-    { num: "24", suffix: "+", desc: "Projects\nCompleted" },
-    { num: "12", suffix: "+", desc: "Happy\nClients" },
-];
+
 
 const career = [
     {
@@ -224,37 +221,21 @@ export default function About() {
                                     퀄리티 높은 결과물을 만들어냅니다.
                                 </p>
 
-                                {/* 스탯 */}
-                                <div className={twMerge(
-                                    "grid grid-cols-3 gap-px mt-4",
-                                    "bg-[#e8d9bc] rounded-xl overflow-hidden"
-                                )}>
-                                    {stats.map(({ num, suffix, desc }) => (
-                                        <div
-                                            key={num}
-                                            className={twMerge(
-                                                "bg-[#f7f4ef]",
-                                                "flex flex-col items-center justify-center",
-                                                "py-6 px-4 text-center"
-                                            )}
-                                        >
-                                            <p className={twMerge(
-                                                "font-serif text-4xl leading-none",
-                                                "text-[#1a1714]"
-                                            )}>
-                                                {num}
-                                                <span className="text-[#c9a96e] text-2xl">{suffix}</span>
-                                            </p>
-                                            <p className={twMerge(
-                                                "text-[10px] tracking-wider uppercase",
-                                                "text-[#7a7168] mt-2",
-                                                "whitespace-pre-line leading-relaxed"
-                                            )}>
-                                                {desc}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
+                                <a
+                                    href="https://github.com/rlatmdalsk-sketch"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className={twMerge(
+                                        "self-start flex items-center gap-3 px-5 py-2.5",
+                                        "border border-[#c9a96e]/40 rounded-full",
+                                        "text-[11px] tracking-widest uppercase text-[#1a1714]",
+                                        "hover:bg-[#c9a96e] hover:text-white hover:border-[#c9a96e]",
+                                        "transition-all duration-300 group"
+                                    )}
+                                >
+                                    <BsGithub className="w-4 h-4 transition-transform group-hover:scale-110" />
+                                    <span>Visit GitHub</span>
+                                </a>
                             </div>
                         )}
 
