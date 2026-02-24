@@ -1,161 +1,117 @@
+import {
+    SiCss3,
+    SiFigma,
+    SiHtml5,
+    SiJavascript,
+    SiNotion,
+    SiReact,
+    SiTailwindcss,
+    SiTypescript,
+} from "react-icons/si";
+import { twMerge } from "tailwind-merge";
+import { BsGithub } from "react-icons/bs";
+import { DiPhotoshop } from "react-icons/di";
+
 const skills = [
-    {
-        label: "HTML5",
-        icon: (
-            <svg viewBox="0 0 128 128" className="w-10 h-10">
-                <path fill="#E44D26" d="M19.037 113.876L9.032 1.627h109.936l-10.016 112.23-45.019 12.446z"/>
-                <path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z"/>
-                <path fill="#EBEBEB" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.018z"/>
-                <path fill="#fff" d="M64 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.336-3.696H64zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692H64z"/>
-            </svg>
-        ),
-    },
-    {
-        label: "CSS3",
-        icon: (
-            <svg viewBox="0 0 128 128" className="w-10 h-10">
-                <path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543z"/>
-                <path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354H64.001z"/>
-                <path fill="#fff" d="M64 26.701h-18.94l1.258 14.053H64v13.74H32.217l-.247-2.767-2.506-28.026-.253-2.853H64zm0 43.107h-10.069l.717 8.011 9.352 2.526v14.562l-17.219-4.774-.253-2.882-1.977-22.163-.253-2.853H64z"/>
-                <path fill="#EBEBEB" d="M64 40.754h19.682l-1.309 14.695H64v13.74h17.129l-1.614 18.044L64 90.76v14.562l28.193-7.825.208-2.329 3.234-36.212.337-3.757.233-2.609H64z"/>
-            </svg>
-        ),
-    },
-    {
-        label: "Tailwind",
-        icon: (
-            <svg viewBox="0 0 128 128" className="w-10 h-10">
-                <path d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.535 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64z" fill="#38bdf8"/>
-            </svg>
-        ),
-    },
-    {
-        label: "JavaScript",
-        icon: (
-            <svg viewBox="0 0 128 128" className="w-10 h-10">
-                <rect width="128" height="128" fill="#f7df1e"/>
-                <path d="M112.8 83.2c-1.56-9.4-9.92-14-20.72-18.82l-4.5-2.12c-4.22-1.94-6.04-3.82-5.78-7.44.22-3.28 2.58-5.76 7.32-5.76 4.78 0 8.08 1.84 10.6 7.2l11.7-7.04c-4.9-9.42-12.2-13.2-22.3-13.2-12.66 0-20.86 7.6-20.86 18.06 0 9.06 5.36 14.36 16.44 19.1l5.28 2.24c5.82 2.54 8.22 5.28 7.74 9.26-.52 4.56-4.24 6.96-10.18 6.96-7.02 0-12.1-3.28-14.82-10.38L62.4 88.66c3.84 9.52 12.86 15.06 22.5 15.06 13.1 0 22.06-6.88 22.06-19.28.06-.98.06-2.14-.16-3.14v2.82zM50.34 41.4H37.18v38.32c0 7.36-.3 13.78-8.56 13.78-8.14 0-8.88-5.64-8.88-13.78V41.4H6.58v38.9c0 14.86 8.26 22.06 22.04 22.06 13.46 0 21.72-7.2 21.72-22.06V41.4z"/>
-            </svg>
-        ),
-    },
-    {
-        label: "TypeScript",
-        icon: (
-            <svg viewBox="0 0 128 128" className="w-10 h-10">
-                <rect width="128" height="128" rx="6" fill="#3178c6"/>
-                <path d="M74.14 96.96V108c1.92.98 4.18 1.72 6.78 2.24s5.27.78 8.01.78c2.68 0 5.24-.29 7.68-.86 2.43-.57 4.57-1.5 6.41-2.78 1.85-1.28 3.31-2.94 4.4-4.99 1.09-2.04 1.63-4.52 1.63-7.42 0-2.13-.31-4-.93-5.6a13.5 13.5 0 00-2.72-4.31 20.4 20.4 0 00-4.38-3.41c-1.73-1.01-3.69-1.97-5.86-2.88-1.59-.67-3.01-1.32-4.26-1.95s-2.31-1.28-3.18-1.95a8.3 8.3 0 01-2.04-2.1c-.48-.74-.72-1.6-.72-2.58 0-.9.22-1.7.65-2.4.43-.71 1.04-1.31 1.82-1.81s1.72-.88 2.82-1.15a15.7 15.7 0 013.57-.39c.95 0 1.95.07 3 .21s2.1.37 3.15.69 2.06.74 3.04 1.27 1.88 1.17 2.7 1.93V62.5a31 31 0 00-5.89-1.56 41.5 41.5 0 00-7.05-.55c-2.62 0-5.12.3-7.5.9a19.2 19.2 0 00-6.22 2.74c-1.77 1.22-3.17 2.78-4.2 4.68-1.03 1.9-1.54 4.17-1.54 6.8 0 3.38.97 6.27 2.92 8.68 1.95 2.4 4.99 4.44 9.12 6.1 1.66.65 3.2 1.29 4.62 1.92s2.66 1.28 3.7 1.97a9.7 9.7 0 012.48 2.33c.6.87.9 1.87.9 3.01 0 .87-.19 1.66-.57 2.38-.38.71-.94 1.33-1.68 1.84s-1.66.91-2.74 1.19a14.6 14.6 0 01-3.66.42c-2.38 0-4.75-.43-7.11-1.28-2.36-.86-4.56-2.16-6.58-3.92zm-20.32-35.18H68.3V50.28H19.03v11.5h14.37V103h20.42z" fill="#fff"/>
-            </svg>
-        ),
-    },
-    {
-        label: "Figma",
-        icon: (
-            <svg viewBox="0 0 128 128" className="w-10 h-10">
-                <path d="M44 124c11.046 0 20-8.954 20-20V84H44c-11.046 0-20 8.954-20 20s8.954 20 20 20z" fill="#0acf83"/>
-                <path d="M24 64c0-11.046 8.954-20 20-20h20v40H44c-11.046 0-20-8.954-20-20z" fill="#a259ff"/>
-                <path d="M24 24c0-11.046 8.954-20 20-20h20v40H44C32.954 44 24 35.046 24 24z" fill="#f24e1e"/>
-                <path d="M64 4h20c11.046 0 20 8.954 20 20s-8.954 20-20 20H64V4z" fill="#ff7262"/>
-                <path d="M104 64c0 11.046-8.954 20-20 20s-20-8.954-20-20 8.954-20 20-20 20 8.954 20 20z" fill="#1abcfe"/>
-            </svg>
-        ),
-    },
-    {
-        label: "Git",
-        icon: (
-            <svg viewBox="0 0 128 128" className="w-10 h-10">
-                <path fill="#F34F29" d="M124.742 58.378L69.625 3.264a8.928 8.928 0 00-12.634 0L44.605 15.65l15.99 15.99a10.607 10.607 0 0113.438 13.529l15.414 15.413a10.61 10.61 0 1111.329 17.258 10.61 10.61 0 01-11.329-17.258l-15.414-15.414a10.61 10.61 0 01-13.528-13.529L44.605 15.65 3.258 57.003a8.928 8.928 0 000 12.634l55.117 55.117a8.929 8.929 0 0012.634 0l53.733-53.742a8.929 8.929 0 000-12.634z"/>
-            </svg>
-        ),
-    },
-    {
-        label: "Photoshop",
-        icon: (
-            <svg viewBox="0 0 128 128" className="w-10 h-10">
-                <rect width="128" height="128" rx="14" fill="#001e36"/>
-                <path d="M31.4 90.4V38.1h18.3c3.9 0 7.3.6 10.2 1.8 2.8 1.2 5 3 6.5 5.4 1.5 2.4 2.3 5.3 2.3 8.7 0 3.3-.7 6.2-2.2 8.7-1.5 2.5-3.6 4.4-6.4 5.8-2.8 1.4-6.1 2.1-9.9 2.1h-8.5v19.8H31.4zm10.3-28.1h7.4c2.6 0 4.5-.7 5.9-2s2-3.3 2-5.8c0-2.4-.7-4.2-2-5.5-1.3-1.3-3.3-1.9-6-1.9h-7.3v15.2zm47.7 28.9c-3.5 0-6.6-.7-9.4-2.1-2.7-1.4-4.9-3.4-6.5-6.1-1.5-2.6-2.3-5.7-2.3-9.3h9.6c.1 2.7.9 4.8 2.4 6.3 1.5 1.5 3.6 2.2 6.4 2.2 2.7 0 4.8-.6 6.2-1.9 1.4-1.3 2.1-3 2.1-5.1 0-1.5-.4-2.8-1.2-3.8-.8-1-1.9-1.9-3.3-2.6-1.4-.7-3.4-1.5-6-2.4-3.2-1-5.8-2.1-7.9-3.2-2.1-1.1-3.8-2.7-5.1-4.7-1.3-2-2-4.6-2-7.9 0-3.1.8-5.8 2.3-8.1 1.5-2.3 3.6-4 6.3-5.2 2.7-1.2 5.8-1.8 9.3-1.8 3.5 0 6.6.6 9.2 1.9 2.6 1.3 4.6 3.1 6 5.4 1.4 2.3 2.2 5 2.3 8.1h-9.8c-.1-2.1-.8-3.8-2.1-5.1-1.3-1.3-3.1-1.9-5.5-1.9-2.2 0-3.9.5-5.1 1.6-1.2 1.1-1.8 2.7-1.8 4.7 0 1.4.4 2.6 1.1 3.5.7.9 1.8 1.7 3.1 2.4 1.3.7 3.3 1.5 5.9 2.4 3.3 1.1 5.9 2.2 8 3.4 2.1 1.2 3.8 2.8 5.1 4.8 1.3 2 2 4.6 2 7.7 0 2.8-.7 5.4-2.2 7.8-1.5 2.4-3.6 4.3-6.4 5.7-2.9 1.5-6.3 2.2-10.2 2.2z" fill="#31a8ff"/>
-            </svg>
-        ),
-    },
-    {
-        label: "Illustrator",
-        icon: (
-            <svg viewBox="0 0 128 128" className="w-10 h-10">
-                <rect width="128" height="128" rx="14" fill="#300"/>
-                <path d="M53.4 84.9l-5.3-17.4H28.8l-5.2 17.4H12.5L31.9 30h13.5l19.6 54.9H53.4zm-7.2-26.4l-4.8-15.8c-.4-1.3-.8-3.2-1.3-5.9-.4 2.3-.8 4.3-1.3 5.9l-4.7 15.8h12.1zm36.4 27c-3.2 0-6-.6-8.4-1.9-2.4-1.3-4.2-3-5.5-5.3-1.3-2.3-1.9-4.9-1.9-7.8 0-3 .7-5.6 2.1-7.7 1.4-2.1 3.4-3.8 5.9-4.9 2.5-1.1 5.4-1.7 8.7-1.8l9.9-.3v-2.5c0-2.4-.5-4.1-1.4-5.2-.9-1-2.4-1.5-4.5-1.5-1.9 0-3.3.4-4.4 1.2-1.1.8-1.7 2-2 3.5l-11-.6c.6-3.9 2.5-6.9 5.7-9 3.2-2 7.3-3.1 12.4-3.1 5.5 0 9.6 1.3 12.5 3.9 2.9 2.6 4.3 6.4 4.3 11.4v16.1c0 1.7.1 3.3.2 4.8.2 1.5.5 3 1 4.4H96.1c-.3-1-.5-2-.6-3-.2-1-.2-2-.2-3-1.1 2.1-2.7 3.7-4.7 4.8-2 1.2-4.4 1.5-8 1.5zm3.5-8.6c2.5 0 4.5-.7 5.9-2.1 1.5-1.4 2.2-3.4 2.2-5.9v-2.9l-7.2.3c-2.1.1-3.7.7-4.8 1.7-1.1 1-1.6 2.3-1.6 4 0 1.6.5 2.9 1.4 3.7 1 .9 2.3 1.2 4.1 1.2z" fill="#ff9a00"/>
-            </svg>
-        ),
-    },
-    {
-        label: "Notion",
-        icon: (
-            <svg viewBox="0 0 128 128" className="w-10 h-10">
-                <rect width="128" height="128" rx="14" fill="#fff"/>
-                <path d="M23.258 20.297c3.405 2.747 4.686 2.56 11.094 2.112l60.352-3.59c1.282 0 .214-1.282-.427-1.495L83.742 9.886c-2.326-1.708-5.39-3.63-11.308-3.204L14.62 10.547c-2.326.214-2.753 1.282-1.899 2.112l10.537 7.638zm4.06 15.61v63.481c0 3.418 1.706 4.7 5.54 4.486l66.504-3.844c3.844-.214 4.272-2.56 4.272-5.334V31.273c0-2.773-1.068-4.27-3.418-4.057l-69.4 4.058c-2.56.213-3.498 1.495-3.498 4.633zm65.221 2.13c.427 1.921 0 3.843-1.921 4.057l-3.205.64v47.125c-2.773 1.496-5.333 2.35-7.466 2.35-3.418 0-4.272-1.068-6.812-4.271L57.571 57.5v36.376l6.4 1.496s0 3.843-5.334 3.843l-14.718.854c-.427-.854 0-2.987 1.495-3.415l3.844-1.068V44.484l-5.335-.426c-.427-1.921.641-4.7 3.63-4.913l15.787-.96 22.398 34.24V40.642l-5.333-.64c-.427-2.348 1.281-3.843 3.415-4.057l14.719-.854z" fill="#000"/>
-            </svg>
-        ),
-    },
+    { label: "HTML5", icon: <SiHtml5 className="w-10 h-10 text-[#E44D26]" /> },
+    { label: "CSS3", icon: <SiCss3 className="w-10 h-10 text-[#1572B6]" /> },
+    { label: "JavaScript", icon: <SiJavascript className="w-10 h-10 text-[#F7DF1E] bg-black" /> },
+    { label: "React", icon: <SiReact className="w-10 h-10 text-[#61DAFB]" /> },
+    { label: "Tailwind", icon: <SiTailwindcss className="w-10 h-10 text-[#38BDF8]" /> },
+    { label: "TypeScript", icon: <SiTypescript className="w-10 h-10 text-[#3178C6]" /> },
+    { label: "Figma", icon: <SiFigma className="w-10 h-10 text-[#F24E1E]" /> },
+    { label: "Git", icon: <BsGithub  className="w-10 h-10 text-[#fff]" /> },
+    { label: "Photoshop", icon: <DiPhotoshop className="w-10 h-10 text-[#31A8FF]" /> },
+    { label: "Notion", icon: <SiNotion className="w-10 h-10 text-white" /> },
 ];
 
 export default function Skills() {
     return (
         <section
             id="skills"
-            className="relative py-28 md:py-40 bg-[#1a1714] overflow-hidden"
+            className={twMerge(
+                "relative py-28 md:py-40",
+                "bg-[#1a1714] overflow-hidden"
+            )}
         >
             {/* 배경 dot 패턴 */}
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 opacity-20"
+                className={twMerge("pointer-events-none absolute inset-0", "opacity-20")}
                 style={{
                     backgroundImage: "radial-gradient(circle, #c9a96e 1px, transparent 1px)",
                     backgroundSize: "32px 32px",
                 }}
             />
 
-            <div className="relative max-w-5xl mx-auto px-6" >
+            <div className="relative max-w-5xl mx-auto px-6">
 
                 {/* 섹션 레이블 */}
-                <div className="flex items-center gap-4 mb-4" data-aos="fade-up">
-          <span className="text-[10px] tracking-[.22em] uppercase text-[#c9a96e]" >
-            Skills & Tools
-          </span>
+                <div
+                    className={twMerge("flex items-center gap-4", "mb-4")}
+                    data-aos="fade-up"
+                >
+                    <span className={twMerge("text-[10px] tracking-[.22em] uppercase", "text-[#c9a96e]")}>
+                        Skills &amp; Tools
+                    </span>
                     <span className="h-px bg-[#c9a96e]/30 w-12" aria-hidden="true" />
                 </div>
 
                 {/* 제목 */}
-                <h2 className="font-serif text-5xl md:text-6xl leading-[1.05] text-white mb-16" data-aos="fade-up" >
+                <h2
+                    className={twMerge(
+                        "font-serif text-5xl md:text-6xl leading-[1.05]",
+                        "text-white mb-16"
+                    )}
+                    data-aos="fade-up"
+                >
                     What I<br />
                     <em className="italic text-[#c9a96e]">work with</em>
                 </h2>
 
                 {/* 카드 그리드 */}
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3" data-aos="fade-up" data-aos-delay="150">
+                <div
+                    className={twMerge(
+                        "grid gap-3",
+                        "grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6"
+                    )}
+                    data-aos="fade-up"
+                    data-aos-delay="150"
+                >
                     {skills.map(({ label, icon }) => (
                         <article
                             key={label}
-                            className="group relative flex flex-col items-center justify-center gap-3
-                         py-6 px-3
-                         bg-white/[0.03] border border-white/10 rounded-2xl
-                         hover:bg-white/[0.07] hover:border-[#c9a96e]/50
-                         hover:-translate-y-1.5 hover:shadow-[0_8px_32px_rgba(201,169,110,0.12)]
-                         transition-all duration-300 cursor-default"
+                            className={twMerge(
+                                "relative flex flex-col items-center justify-center gap-3",
+                                "py-6 px-3",
+                                "bg-white/[0.03] border border-white/10 rounded-2xl",
+                                "hover:bg-white/[0.07] hover:border-[#c9a96e]/50",
+                                "hover:-translate-y-1.5 hover:shadow-[0_8px_32px_rgba(201,169,110,0.12)]",
+                                "transition-all duration-300 cursor-default"
+                            )}
                         >
                             {/* 호버 글로우 */}
                             <div
                                 aria-hidden="true"
-                                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                className={twMerge(
+                                    "absolute inset-0 rounded-2xl",
+                                    "opacity-0 group-hover:opacity-100",
+                                    "transition-opacity duration-300"
+                                )}
                                 style={{
                                     background: "radial-gradient(circle at 50% 0%, rgba(201,169,110,0.08), transparent 70%)",
                                 }}
                             />
-
                             <div className="transition-transform duration-300 group-hover:scale-110 relative">
                                 {icon}
                             </div>
-
-                            <span className="text-[11px] tracking-wider text-white/50 group-hover:text-white/90 transition-colors duration-200 font-medium">
-                {label}
-              </span>
+                            <span className={twMerge(
+                                "text-[11px] tracking-wider font-medium",
+                                "text-white/50 group-hover:text-white/90",
+                                "transition-colors duration-200"
+                            )}>
+                                {label}
+                            </span>
                         </article>
                     ))}
                 </div>
