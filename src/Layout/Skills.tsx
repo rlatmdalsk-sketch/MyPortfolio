@@ -73,10 +73,9 @@ export default function Skills() {
                 <div
                     className={twMerge(
                         "grid gap-3",
-                        "grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6"
+                        "grid-cols-4 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6"
                     )}
-                    data-aos="fade-up"
-                    data-aos-delay="150"
+
                 >
                     {skills.map(({ label, icon }) => (
                         <article

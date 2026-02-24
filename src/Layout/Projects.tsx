@@ -9,9 +9,9 @@ const PROJECTS_DATA = [
     {
         id: "GentleMonster",
         span: "md:col-span-8",
-        aspect: "aspect-[16/7]",
-        title: "GentleMonster-CopyProject",
-        desc: "설명창 높이를 유지하며 Swiper 페이드를 적용했습니다.",
+        aspect: "aspect-[16/8]",
+        title: "GENTLE MONSTER",
+        desc: "GentleMonster 공식홈페이지를 클론한 대형 프로젝트입니다",
         images: [
             "/Gentle/Gentle1.JPG",
             "/Gentle/Gentle2.JPG",
@@ -24,9 +24,9 @@ const PROJECTS_DATA = [
     {
         id: "Wetube",
         span: "md:col-span-4",
-        aspect: "aspect-[16/13]",
+        aspect: "aspect-[1]",
         title: "WeTube",
-        desc: "전환율 최적화 페이지",
+        desc: "유튜브를 모방하여 만든 커뮤니티 프로젝트입니다",
         images: [
             "/Wetube/Wetube1.JPG",
             "/Wetube/Wetube2.JPG",
@@ -40,8 +40,8 @@ const PROJECTS_DATA = [
         id: "Prospecs",
         span: "md:col-span-3",
         aspect: "aspect-video",
-        title: "Prospecs-UI",
-        desc: "상세 설명 텍스트",
+        title: "Prospecs",
+        desc: "Prospecs 공식홈페이지의 UI를 클론한 프로젝트입니다",
         images: ["/Prospecs/Prospecs1.JPG", "/Prospecs/Prospecs2.JPG", "/Prospecs/Prospecs3.JPG"],
         liveUrl: "https://lecture-prospecs.vercel.app/",
         githubUrl: "https://github.com/rlatmdalsk-sketch/lecture-prospecs/tree/master",
@@ -51,7 +51,7 @@ const PROJECTS_DATA = [
         span: "md:col-span-3",
         aspect: "aspect-video",
         title: "POKEDEX",
-        desc: "상세 설명 텍스트",
+        desc: "포켓몬 API를 활용한 포켓몬 도감입니다",
         images: ["/PokeDex/PokeDex1.JPG", "/PokeDex/PokeDex2.JPG"],
         liveUrl: "https://poke-dex-three-ivory.vercel.app/",
         githubUrl: "https://github.com/rlatmdalsk-sketch/PokeDex/tree/master",
@@ -61,7 +61,7 @@ const PROJECTS_DATA = [
         span: "md:col-span-3",
         aspect: "aspect-video",
         title: "Movie-Search",
-        desc: "상세 설명 텍스트",
+        desc: "영화 검색 API를 활용하여 만든 사이트입니다",
         images: ["/Movie/movie1.JPG", "/Movie/movie2.JPG", "/Movie/Movie3.JPG"],
         liveUrl: "https://moive-search-eight.vercel.app/",
         githubUrl: "https://github.com/rlatmdalsk-sketch/moive-search/tree/master",
@@ -71,7 +71,7 @@ const PROJECTS_DATA = [
         span: "md:col-span-3",
         aspect: "aspect-video",
         title: "Anime Explorer",
-        desc: "상세 설명 텍스트",
+        desc: "애니메이션 API를 활용하여 만든 사이트입니다",
         images: [
             "/Anime/AnimeExplorer1.JPG",
             "/Anime/AnimeExplorer2.JPG",
@@ -112,7 +112,6 @@ export default function Projects() {
                                 swipers[p.id]?.autoplay.stop();
                                 swipers[p.id]?.slideTo(0);
                             }}>
-                            {/* 카드 전체 클릭 레이어 (LiveUrl) */}
                             <a
                                 href={p.liveUrl}
                                 target="_blank"
@@ -159,15 +158,16 @@ export default function Projects() {
                                 </div>
                             </div>
 
-                            <div className="py-3 px-5 relative z-0">
+                            <div className="py-3 px-5 relative z-0 ">
                                 <h3
                                     className={twMerge(
                                         "font-serif text-[#1a1714] mb-0.5",
                                         p.id === "GentleMonster" ? "text-xl" : "text-lg",
+
                                     )}>
                                     {p.title}
                                 </h3>
-                                <p className="text-[11px] text-[#7a7168]">{p.desc}</p>
+                                <p className="text-[11px] text-[#7a7168] ">{p.desc}</p>
                             </div>
                         </article>
                     ))}
