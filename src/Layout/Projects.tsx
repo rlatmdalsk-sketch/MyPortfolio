@@ -81,30 +81,25 @@ const PROJECTS_DATA = [
         githubUrl: "https://github.com/rlatmdalsk-sketch/Anime-Explorer/tree/master",
     },
 ];
-
 export default function Projects() {
-    const [swipers, setSwipers] = useState<{ [key: string]:string }>({});
+    const [swipers, setSwipers] = useState<{ [key: string]: any }>({});
 
     return (
         <section id="projects" className="py-24 md:py-36 bg-[#f7f4ef]">
             <div className="max-w-5xl mx-auto px-6">
-                <div className="mb-12" data-aos="fade-right">
-                    <h2
-                        className={twMerge(
-                            "font-serif text-5xl md:text-6xl leading-[1.05]",
-                            "text-[#333] mb-16"
-                        )}
-                        data-aos="fade-up"
-                    >
-                        My<br />
+                <div data-aos="fade-right" className="mb-12" >
+                    <h2 className="font-serif text-5xl md:text-6xl leading-[1.05] text-[#333] mb-16">
+                        My
+                        <br />
                         <em className="italic text-[#c9a96e]">Projects</em>
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-5" data-aos="fade-right">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
                     {PROJECTS_DATA.map(p => (
                         <article
                             key={p.id}
+                            data-aos="fade-right"
                             className={twMerge(
                                 p.span,
                                 "group bg-white rounded-md overflow-hidden shadow-sm hover:-translate-y-1.5 transition-all duration-300 relative",
@@ -128,11 +123,8 @@ export default function Projects() {
                                     speed={500}
                                     loop={true}
                                     autoplay={{ delay: 700, disableOnInteraction: false }}
-                                    onSwiper={s => {
-                                        setSwipers(prev => ({ ...prev, [p.id]: s }));
-                                        s.autoplay.stop();
-                                    }}
-                                    className="w-full h-full">
+                                    onSwiper={s => setSwipers(prev => ({ ...prev, [p.id]: s }))}
+                                    className="w-full h-full pointer-events-none">
                                     {p.images.map((img, i) => (
                                         <SwiperSlide key={i}>
                                             <img
@@ -144,32 +136,33 @@ export default function Projects() {
                                     ))}
                                 </Swiper>
 
-                                <div className="absolute inset-0 bg-[#1a1714]/60 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3 cursor-pointer ">
-                                    <a
-                                        href={p.liveUrl}
-                                        className="px-4 py-1.5 border border-white/60 text-white text-[11px] uppercase hover:text-[#333] hover:bg-[#fff] transition-colors">
+                                <div className="absolute inset-0 bg-[#1a1714]/60 opacity-0 group-hover:opacity-100 transition-opacity z-20 flex items-center justify-center gap-3 pointer-events-none">
+                                    <div className="px-4 py-1.5 border border-white/60 text-white text-[11px] uppercase hover:bg-white hover:text-black transition-colors pointer-events-auto cursor-pointer">
                                         Live
-                                    </a>
+                                    </div>
+
                                     <a
                                         href={p.githubUrl}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="px-4 py-1.5 border border-white/60 text-white text-[11px] uppercase hover:text-[#333] hover:bg-[#fff] transition-colors ">
+                                        className="px-4 py-1.5 border border-white/60 text-white text-[11px] uppercase hover:bg-white hover:text-black transition-colors pointer-events-auto"
+                                    >
                                         GitHub
                                     </a>
                                 </div>
                             </div>
 
-                            <div className="py-3 px-5 relative z-0 ">
+                            <div className="py-3 px-5 relative z-0">
                                 <h3
                                     className={twMerge(
                                         "font-serif text-[#1a1714] mb-0.5",
                                         p.id === "GentleMonster" ? "text-xl" : "text-lg",
-
                                     )}>
                                     {p.title}
                                 </h3>
-                                <p className="text-[11px] text-[#7a7168] ">{p.desc}</p>
+                                <p className="text-[11px] text-[#7a7168] leading-relaxed">
+                                    {p.desc}
+                                </p>
                             </div>
                         </article>
                     ))}
