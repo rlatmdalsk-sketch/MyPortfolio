@@ -47,8 +47,8 @@ export default function Skills() {
                             className={twMerge(
                                 "group relative flex flex-col items-center justify-center gap-2 md:gap-5",
                                 "py-4 md:py-10 px-1 md:px-4",
-                                "bg-white/[0.03] border border-white/10 rounded-xl md:rounded-3xl",
-                                "hover:bg-white/[0.08] hover:border-[#c9a96e]/50",
+                                "bg-white/3 border border-white/10 rounded-xl md:rounded-3xl",
+                                "hover:bg-white/8 hover:border-[#c9a96e]/50",
                                 "hover:-translate-y-1.5 transition-all duration-500"
                             )}
                         >

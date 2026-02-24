@@ -9,6 +9,7 @@ const config = {
     printWidth: 100,
     arrowParens: "avoid",
     bracketSameLine: true,
+    plugins: ["prettier-plugin-tailwindcss"],
 };
 
 export default config;
