@@ -2,65 +2,50 @@ import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { BsGithub } from "react-icons/bs";
 
-
 /* 데이터 */
 const infoList = [
-    { label: "Name",     value: "김승민" },
-    { label: "Role",     value: "Web Publisher / Marketer" },
+    { label: "Name", value: "김승민" },
+    { label: "Role", value: "Web Publisher / Marketer" },
     { label: "Location", value: "Siheung, Korea" },
-    { label: "Email",    value: "rlatmdalsk@naver.com" },
+    { label: "Email", value: "rlatmdalsk@naver.com" },
 ];
-
-
 
 const career = [
     {
-        period: "2023.03 — 현재",
-        title: "OOO 디지털 에이전시",
-        sub: "웹퍼블리셔 · 정규직",
-        desc: "반응형 웹 퍼블리싱 및 랜딩 페이지 제작, Figma 시안 기반 마크업, 크로스브라우징 대응.",
+        period: "2025.09 — 2026.02",
+        title: "라인컴퓨터 아트학원",
+        sub: "Node.JS 기반 Open API를 활용한 응용 소프트웨어 개발자 양성 과정",
+        desc: "React 프레임워크를 메인으로 하여 컴포넌트 기반 UI/UX 설계 및 상태 관리 학습. Node.js와 Open API를 연동하여 비동기 데이터를 실제 화면에 효율적으로 렌더링하는 퍼블리싱 기술 숙달.",
     },
     {
-        period: "2022.01 — 2023.02",
-        title: "OOO 마케팅 회사",
-        sub: "프론트엔드 인턴",
-        desc: "SNS 광고 배너 HTML 제작, 이메일 템플릿 퍼블리싱, 유지보수 작업 담당.",
-    },
-    {
-        period: "2018 — 2022",
-        title: "OO대학교",
-        sub: "디지털미디어디자인학과 · 학사 졸업",
-        desc: "웹 디자인, UI/UX, 영상 편집 전공.",
+        period: "2021.03 — 2025.02",
+        title: "인하공업전문대학교",
+        sub: "정보통신학과 졸업",
+        desc: "네트워크 구조 및 통신 프로토콜 이해, 프로그래밍 기초(C, Java) 및 웹개발실습",
     },
 ];
 
 const certs = [
-    { name: "웹디자인기능사",         org: "한국산업인력공단", year: "2022" },
-    { name: "정보처리기능사",         org: "한국산업인력공단", year: "2021" },
-    { name: "GTQ 그래픽기술자격 1급", org: "한국생산성본부",   year: "2020" },
-    { name: "컴퓨터활용능력 1급",     org: "대한상공회의소",   year: "2019" },
+    { name: "검색광고마케터 1급", org: "한국정보통신진흥협회", year: "2025" },
+    { name: "GoogleAds", org: "Google", year: "2025" },
+    { name: "운전면허 2종보통", org: "도로교통공단", year: "2020" },
 ];
 
 const TABS = [
-    { key: "int",    label: "소개" },
-    { key: "career", label: "경력" },
-    { key: "cert",   label: "자격증" },
+    { key: "int", label: "소개" },
+    { key: "career", label: "경험/교육" },
+    { key: "cert", label: "자격증" },
 ] as const;
 
 type Tab = "int" | "career" | "cert";
 
-/* 컴포넌트 */
 export default function About() {
     const [tab, setTab] = useState<Tab>("int");
 
     return (
         <section
             id="about"
-            className={twMerge(
-                "relative overflow-hidden",
-                "bg-[#f7f4ef] py-28 md:py-40"
-            )}
-        >
+            className={twMerge("relative overflow-hidden", "bg-[#f7f4ef] py-28 md:py-40")}>
             {/* 배경 미세 그리드 */}
             <div
                 aria-hidden="true"
@@ -73,27 +58,30 @@ export default function About() {
             />
 
             <div className="relative max-w-5xl mx-auto px-6">
-
                 {/*ABOUT ME*/}
-                <div
-                    className={twMerge("flex items-center gap-4", "mb-16")}
-                    data-aos="fade-up"
-                >
-                    <span className={twMerge("text-[10px] tracking-[.22em] uppercase", "text-[#c9a96e]")}>
+                <div className={twMerge("flex items-center gap-4", "mb-16")} data-aos="fade-up">
+                    <span
+                        className={twMerge(
+                            "text-[10px] tracking-[.22em] uppercase",
+                            "text-[#c9a96e]",
+                        )}>
                         About Me
                     </span>
                     <span className="flex-1 h-px bg-[#c9a96e]/25 max-w-[60px]" aria-hidden="true" />
                 </div>
 
                 {/* 본문 그리드 */}
-                <div className={twMerge("grid items-start", "md:grid-cols-[300px_1fr]", "gap-12 lg:gap-20")}>
-
-                   {/*왼쪽 컬럼*/}
+                <div
+                    className={twMerge(
+                        "grid items-start",
+                        "md:grid-cols-[300px_1fr]",
+                        "gap-12 lg:gap-20",
+                    )}>
+                    {/*왼쪽 컬럼*/}
                     <div
                         className={twMerge("flex flex-col gap-8")}
                         data-aos="fade-right"
-                        data-aos-delay="100"
-                    >
+                        data-aos-delay="100">
                         {/* 프로필 사진 */}
                         <div className="relative self-start w-full">
                             <div
@@ -101,14 +89,15 @@ export default function About() {
                                 className={twMerge(
                                     "absolute -bottom-3 -right-3",
                                     "w-full h-full",
-                                    "border border-[#c9a96e]/50 rounded-2xl"
+                                    "border border-[#c9a96e]/50 rounded-2xl",
                                 )}
                             />
-                            <div className={twMerge(
-                                "relative aspect-[4/5] w-full",
-                                "rounded-2xl overflow-hidden",
-                                "bg-[#e8d9bc]"
-                            )}>
+                            <div
+                                className={twMerge(
+                                    "relative aspect-[4/5] w-full",
+                                    "rounded-2xl overflow-hidden",
+                                    "bg-[#e8d9bc]",
+                                )}>
                                 <img
                                     src="/Profile.jpg"
                                     alt="프로필 사진"
@@ -124,19 +113,20 @@ export default function About() {
                                     key={label}
                                     className={twMerge(
                                         "flex justify-between items-baseline",
-                                        "py-3 gap-4"
-                                    )}
-                                >
-                                    <span className={twMerge(
-                                        "text-[10px] tracking-[.15em] uppercase",
-                                        "text-[#c9a96e] shrink-0"
+                                        "py-3 gap-4",
                                     )}>
+                                    <span
+                                        className={twMerge(
+                                            "text-[10px] tracking-[.15em] uppercase",
+                                            "text-[#c9a96e] shrink-0",
+                                        )}>
                                         {label}
                                     </span>
-                                    <span className={twMerge(
-                                        "text-sm text-[#1a1714]",
-                                        "text-right leading-snug"
-                                    )}>
+                                    <span
+                                        className={twMerge(
+                                            "text-sm text-[#1a1714]",
+                                            "text-right leading-snug",
+                                        )}>
                                         {value}
                                     </span>
                                 </li>
@@ -148,23 +138,23 @@ export default function About() {
                     <div
                         className={twMerge("flex flex-col gap-0")}
                         data-aos="fade-right"
-                        data-aos-delay="200"
-                    >
+                        data-aos-delay="200">
                         {/* 제목 */}
-                        <h2 className={twMerge(
-                            "font-serif text-5xl md:text-6xl leading-[1.05]",
-                            "text-[#1a1714] mb-10"
-                        )}>
-                            Creative<br />
-                            <em className="italic text-[#c9a96e]">Developer</em>
+                        <h2
+                            className={twMerge(
+                                "font-serif text-5xl md:text-6xl leading-[1.05]",
+                                "text-[#1a1714] mb-10",
+                            )}>
+                            Web Agency
+                            <br />
+                            <em className="italic text-[#c9a96e]">Publisher</em>
                         </h2>
 
                         {/* 탭 버튼 */}
                         <div
                             role="tablist"
                             aria-label="소개 탭"
-                            className={twMerge("flex gap-0", "border-b border-[#e8d9bc]", "mb-8")}
-                        >
+                            className={twMerge("flex gap-0", "border-b border-[#e8d9bc]", "mb-8")}>
                             {TABS.map(({ key, label }) => (
                                 <button
                                     key={key}
@@ -179,9 +169,8 @@ export default function About() {
                                         tab === key
                                             ? "text-[#1a1714]"
                                             : "text-[#7a7168] hover:text-[#1a1714]",
-                                        "cursor-pointer"
-                                    )}
-                                >
+                                        "cursor-pointer",
+                                    )}>
                                     {label}
                                     <span
                                         aria-hidden="true"
@@ -189,7 +178,7 @@ export default function About() {
                                             "absolute bottom-[-1px] left-0 right-0 h-[2px]",
                                             "bg-[#c9a96e]",
                                             "transition-transform duration-300 origin-left",
-                                            tab === key ? "scale-x-100" : "scale-x-0"
+                                            tab === key ? "scale-x-100" : "scale-x-0",
                                         )}
                                     />
                                 </button>
@@ -203,22 +192,29 @@ export default function About() {
                                 role="tabpanel"
                                 className={twMerge(
                                     "flex flex-col gap-5",
-                                    "animate-[fadeUp_.35s_ease_forwards]"
-                                )}
-                            >
-                                <p className={twMerge("text-[15px] leading-[1.85]", "text-[#7a7168]")}>
-                                    안녕하세요! 웹퍼블리셔 &amp; 프론트엔드 개발자{" "}
-                                    <strong className="text-[#1a1714] font-medium">홍길동</strong>입니다.
-                                    시맨틱 마크업과 접근성에 기반한 깔끔한 코드를 작성하고,
+                                    "animate-[fadeUp_.35s_ease_forwards]",
+                                )}>
+                                <p
+                                    className={twMerge(
+                                        "text-[15px] leading-[1.85]",
+                                        "text-[#7a7168]",
+                                    )}>
+                                    안녕하세요! 웹퍼블리셔 &amp; 웹 마케터{" "}
+                                    <strong className="text-[#1a1714] font-medium">김승민</strong>
+                                    입니다. 시맨틱 마크업과 접근성에 기반한 깔끔한 코드를 작성하고,
                                     사용자 경험을 중심으로 인터페이스를 설계합니다.
                                 </p>
-                                <p className={twMerge("text-[15px] leading-[1.85]", "text-[#7a7168]")}>
+                                <p
+                                    className={twMerge(
+                                        "text-[15px] leading-[1.85]",
+                                        "text-[#7a7168]",
+                                    )}>
                                     광고·마케팅 에이전시와 협업하며{" "}
                                     <strong className="text-[#1a1714] font-medium">
                                         브랜드 아이덴티티를 디지털로 구현하는 작업
                                     </strong>
-                                    을 즐겨 왔습니다. 반응형 웹, 크로스브라우징, SEO 최적화를 기본으로
-                                    퀄리티 높은 결과물을 만들어냅니다.
+                                    을 즐겨 왔습니다. 반응형 웹, 크로스브라우징, SEO 최적화를
+                                    기본으로 퀄리티 높은 결과물을 만들어냅니다.
                                 </p>
 
                                 <a
@@ -230,16 +226,14 @@ export default function About() {
                                         "border border-[#c9a96e]/40 rounded-full",
                                         "text-[11px] tracking-widest uppercase text-[#1a1714]",
                                         "hover:bg-[#c9a96e] hover:text-white hover:border-[#c9a96e]",
-                                        "transition-all duration-300 group"
-                                    )}
-                                >
+                                        "transition-all duration-300 group",
+                                    )}>
                                     <BsGithub className="w-4 h-4 transition-transform group-hover:scale-110" />
                                     <span>Visit GitHub</span>
                                 </a>
                             </div>
                         )}
 
-                        {/* 경력 */}
                         {tab === "career" && (
                             <ol
                                 id="panel-career"
@@ -247,9 +241,8 @@ export default function About() {
                                 className={twMerge(
                                     "relative flex flex-col gap-0",
                                     "pl-6",
-                                    "animate-[fadeUp_.35s_ease_forwards]"
-                                )}
-                            >
+                                    "animate-[fadeUp_.35s_ease_forwards]",
+                                )}>
                                 <span
                                     aria-hidden="true"
                                     className="absolute left-[3px] top-2 bottom-4 w-px bg-[#e8d9bc]"
@@ -261,23 +254,27 @@ export default function About() {
                                             className={twMerge(
                                                 "absolute -left-6 top-[6px]",
                                                 "w-[10px] h-[10px] rounded-full",
-                                                "border-2 border-[#c9a96e] bg-[#f7f4ef]"
+                                                "border-2 border-[#c9a96e] bg-[#f7f4ef]",
                                             )}
                                         />
-                                        <p className={twMerge(
-                                            "text-[10px] tracking-[.15em] uppercase",
-                                            "text-[#c9a96e] mb-1.5"
-                                        )}>
+                                        <p
+                                            className={twMerge(
+                                                "text-[10px] tracking-[.15em] uppercase",
+                                                "text-[#c9a96e] mb-1.5",
+                                            )}>
                                             {period}
                                         </p>
-                                        <h3 className={twMerge(
-                                            "font-serif text-[17px] leading-snug",
-                                            "text-[#1a1714] mb-0.5"
-                                        )}>
+                                        <h3
+                                            className={twMerge(
+                                                "font-serif text-[17px] leading-snug",
+                                                "text-[#1a1714] mb-0.5",
+                                            )}>
                                             {title}
                                         </h3>
                                         <p className="text-xs text-[#c9a96e]/80 mb-2">{sub}</p>
-                                        <p className="text-[13px] text-[#7a7168] leading-relaxed">{desc}</p>
+                                        <p className="text-[13px] text-[#7a7168] leading-relaxed">
+                                            {desc}
+                                        </p>
                                     </li>
                                 ))}
                             </ol>
@@ -288,43 +285,30 @@ export default function About() {
                             <ul
                                 id="panel-cert"
                                 role="tabpanel"
-                                className={twMerge(
-                                    "flex flex-col gap-2.5",
-                                    "animate-[fadeUp_.35s_ease_forwards]"
-                                )}
-                            >
+                                className="flex flex-col gap-3 animate-[fadeUp_.35s_ease_forwards]">
                                 {certs.map(({ name, org, year }) => (
                                     <li
                                         key={name}
                                         className={twMerge(
-                                            "group flex items-center gap-4",
-                                            "px-5 py-4",
-                                            "border border-[#e8d9bc] rounded-xl bg-white",
-                                            "hover:border-[#c9a96e]",
-                                            "hover:shadow-[0_4px_24px_rgba(201,169,110,.12)]",
-                                            "transition-all duration-300"
-                                        )}
-                                    >
-                                        <span
-                                            aria-hidden="true"
-                                            className={twMerge(
-                                                "w-10 h-10 rounded-full",
-                                                "bg-[#f7f4ef] border border-[#e8d9bc]",
-                                                "group-hover:border-[#c9a96e]/40",
-                                                "flex items-center justify-center text-base shrink-0",
-                                                "transition-colors duration-300"
-                                            )}
-                                        >
-                                            🏅
-                                        </span>
-                                        <div className="flex-1 min-w-0">
-                                            <p className="text-sm font-medium text-[#1a1714] leading-snug">{name}</p>
-                                            <p className="text-xs text-[#7a7168] mt-0.5">{org}</p>
-                                        </div>
-                                        <span className={twMerge(
-                                            "font-serif text-xl",
-                                            "text-[#c9a96e] shrink-0 tabular-nums"
+                                            "group flex items-center justify-between gap-4",
+                                            "px-6 py-5 bg-white border border-[#e8d9bc] rounded-2xl",
+                                            "hover:border-[#c9a96e] hover:shadow-lg transition-all duration-300",
                                         )}>
+                                        <div className="flex items-center gap-4">
+                                            <span className="text-xl group-hover:scale-110 transition-transform">
+                                                🏅
+                                            </span>
+                                            <div>
+                                                <h4 className="text-[15px] font-medium text-[#1a1714] leading-tight">
+                                                    {name}
+                                                </h4>
+                                                <p className="text-[12px] text-[#7a7168] mt-1">
+                                                    {org}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <span className="font-serif text-lg text-[#c9a96e] tabular-nums shrink-0">
                                             {year}
                                         </span>
                                     </li>
