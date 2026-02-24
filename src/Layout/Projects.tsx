@@ -97,18 +97,17 @@ export default function Projects() {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
                     {PROJECTS_DATA.map(p => (
                         <article
+                            data-aos="fade-right"
                             key={p.id}
                             className={twMerge(
                                 p.span,
                                 "group bg-white rounded-md overflow-hidden shadow-sm hover:-translate-y-1.5 transition-all duration-300 relative",
                             )}
-                            // 마우스 들어오면 재생
                             onMouseEnter={() => {
                                 if (swipers[p.id]) {
                                     swipers[p.id].autoplay.start();
                                 }
                             }}
-                            // 마우스 나가면 정지 + 첫 슬라이드로 복귀
                             onMouseLeave={() => {
                                 if (swipers[p.id]) {
                                     swipers[p.id].autoplay.stop();
@@ -122,24 +121,19 @@ export default function Projects() {
                                     effect="fade"
                                     speed={500}
                                     loop={true}
-                                    // 1. 초기 상태에서 실행되지 않도록 설정
                                     autoplay={{
                                         delay: 700,
-                                        disableOnInteraction: false,
-                                        enabled: false // 처음엔 꺼둠
+                                        disableOnInteraction: false
                                     }}
-                                    onSwiper={s => {
-                                        s.autoplay.stop(); // 확실하게 한 번 더 멈춤
+                                    onSwiper={(s) => {
+                                        s.autoplay.stop();
                                         setSwipers(prev => ({ ...prev, [p.id]: s }));
                                     }}
-                                    className="w-full h-full pointer-events-none">
+                                    className="w-full h-full pointer-events-none"
+                                >
                                     {p.images.map((img, i) => (
                                         <SwiperSlide key={i}>
-                                            <img
-                                                src={img}
-                                                className="w-full h-full object-cover"
-                                                alt=""
-                                            />
+                                            <img src={img} className="w-full h-full object-cover" alt="" />
                                         </SwiperSlide>
                                     ))}
                                 </Swiper>
