@@ -65,8 +65,8 @@ export default function Skills() {
                     )}
                     data-aos="fade-up"
                 >
-                    What I<br />
-                    <em className="italic text-[#c9a96e]">work with</em>
+                    Technical<br />
+                    <em className="italic text-[#c9a96e]">Skills</em>
                 </h2>
 
                 {/* 카드 그리드 */}
@@ -89,7 +89,6 @@ export default function Skills() {
                                 "transition-all duration-300 cursor-default"
                             )}
                         >
-                            {/* 호버 글로우 */}
                             <div
                                 aria-hidden="true"
                                 className={twMerge(
