@@ -15,8 +15,7 @@ const PROJECTS_DATA = [
         images: [
             "/Gentle/Gentle1.JPG",
             "/Gentle/Gentle2.JPG",
-            "/Gentle/Gentle3.JPG",
-            "/Gentle/Gentle4.JPG",
+            "/Gentle/Gentle3.JPG", "/Gentle/Gentle4.JPG",
         ],
         liveUrl: "https://gentlemonster-copyproject.vercel.app/",
         githubUrl: "https://github.com/rlatmdalsk-sketch/gentlemonster-copyproject/tree/main",
@@ -99,22 +98,23 @@ export default function Projects() {
                     {PROJECTS_DATA.map(p => (
                         <article
                             key={p.id}
-                            data-aos="fade-right"
                             className={twMerge(
                                 p.span,
                                 "group bg-white rounded-md overflow-hidden shadow-sm hover:-translate-y-1.5 transition-all duration-300 relative",
                             )}
-                            onMouseEnter={() => swipers[p.id]?.autoplay.start()}
+                            // 마우스 들어오면 재생
+                            onMouseEnter={() => {
+                                if (swipers[p.id]) {
+                                    swipers[p.id].autoplay.start();
+                                }
+                            }}
+                            // 마우스 나가면 정지 + 첫 슬라이드로 복귀
                             onMouseLeave={() => {
-                                swipers[p.id]?.autoplay.stop();
-                                swipers[p.id]?.slideTo(0);
+                                if (swipers[p.id]) {
+                                    swipers[p.id].autoplay.stop();
+                                    swipers[p.id].slideTo(0);
+                                }
                             }}>
-                            <a
-                                href={p.liveUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="absolute inset-0 z-10"
-                            />
 
                             <div className={twMerge("relative overflow-hidden", p.aspect)}>
                                 <Swiper
@@ -122,8 +122,16 @@ export default function Projects() {
                                     effect="fade"
                                     speed={500}
                                     loop={true}
-                                    autoplay={{ delay: 700, disableOnInteraction: false }}
-                                    onSwiper={s => setSwipers(prev => ({ ...prev, [p.id]: s }))}
+                                    // 1. 초기 상태에서 실행되지 않도록 설정
+                                    autoplay={{
+                                        delay: 700,
+                                        disableOnInteraction: false,
+                                        enabled: false // 처음엔 꺼둠
+                                    }}
+                                    onSwiper={s => {
+                                        s.autoplay.stop(); // 확실하게 한 번 더 멈춤
+                                        setSwipers(prev => ({ ...prev, [p.id]: s }));
+                                    }}
                                     className="w-full h-full pointer-events-none">
                                     {p.images.map((img, i) => (
                                         <SwiperSlide key={i}>
