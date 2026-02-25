@@ -207,7 +207,7 @@ export default function About() {
                                 className={twMerge(
                                     "flex flex-col gap-5",
                                     "animate-[fadeUp_.35s_ease_forwards]",
-                                    "text-center text-[13.5px] leading-[1.85] break-keep text-[#7a7168] md:text-left md:text-[14px]",
+                                    "text-center text-[14px] leading-[1.85] break-keep text-[#7a7168] md:text-left md:text-[14px]",
                                     "items-center md:items-start",
                                 )}>
                                 <p>
@@ -241,7 +241,7 @@ export default function About() {
                                     rel="noreferrer"
                                     className={twMerge(
                                         "flex items-center justify-center md:self-start",
-                                        "mt-8 gap-3 px-5 py-2.5 md:mt-5",
+                                        "md:mt-5 mt-2 gap-3 px-5 py-2.5",
                                         "rounded-full border border-[#c9a96e]/40",
                                         "text-[11px] tracking-widest text-[#1a1714] uppercase",
                                         [
