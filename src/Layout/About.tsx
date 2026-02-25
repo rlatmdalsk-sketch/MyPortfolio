@@ -207,7 +207,7 @@ export default function About() {
                                 className={twMerge(
                                     "flex flex-col gap-5",
                                     "animate-[fadeUp_.35s_ease_forwards]",
-                                    "text-center text-[14px] leading-[1.85] break-keep text-[#7a7168] md:text-left md:text-[14px]",
+                                    "text-center text-[14px] leading-[1.85] break-keep text-[#7a7168] md:text-left",
                                     "items-center md:items-start",
                                 )}>
                                 <p>
