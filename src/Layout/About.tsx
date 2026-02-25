@@ -6,7 +6,7 @@ import { BsGithub } from "react-icons/bs";
 const infoList = [
     { label: "Name", value: "김승민" },
     { label: "Birthdate", value: "2002.01.27" },
-    { label: "Role", value: "Web Publisher / Marketer" },
+    { label: "Role", value: "Web Publisher" },
     { label: "Location", value: "Siheung, Korea" },
     { label: "Email", value: "rlatmdalsk@naver.com" },
 ];
@@ -207,20 +207,32 @@ export default function About() {
                                 className={twMerge(
                                     "flex flex-col gap-5",
                                     "animate-[fadeUp_.35s_ease_forwards]",
+                                    "text-center text-[13.5px] leading-[1.85] break-keep text-[#7a7168] md:text-left md:text-[14px]",
+                                    "items-center md:items-start",
                                 )}>
-                                <p className={twMerge("text-[15px] leading-[1.85] text-[#7a7168]")}>
-                                    안녕하세요! 웹퍼블리셔 &amp; 웹 마케터{" "}
-                                    <strong className="font-medium text-[#1a1714]">김승민</strong>
-                                    입니다. 시맨틱 마크업과 접근성에 기반한 깔끔한 코드를 작성하고,
-                                    사용자 경험을 중심으로 인터페이스를 설계합니다.
-                                </p>
-                                <p className={twMerge("leading-[1.85] text-[#7a7168] text-[15px]")}>
-                                    광고·마케팅 에이전시와 협업하며{" "}
-                                    <strong className="font-medium text-[#1a1714]">
-                                        브랜드 아이덴티티를 디지털로 구현하는 작업
+                                <p>
+                                    대학 시절 웹 개발을 처음 접하며, 웹이 브랜드와 세상을 연결하는
+                                    강력한 소통 도구라는 점에 매력을 느껴 <br className="md:hidden"/>
+                                    <strong className="font-medium text-[#1a1714] ">
+                                        {" "}
+                                        퍼블리셔
                                     </strong>
-                                    을 즐겨 왔습니다. 반응형 웹, 크로스브라우징, SEO 최적화를
-                                    기본으로 퀄리티 높은 결과물을 만들어냅니다.
+                                    의 길을 걷게 되었습니다.
+                                </p>
+                                <p>
+                                    어떤 기기에서든 최상의 경험을 주는 유연한{" "}
+                                    <strong className="font-medium text-[#1a1714]">
+                                        반응형 웹
+                                    </strong>
+                                    을 지향하며, 웹 표준을 준수하는
+                                    <strong className="font-medium text-[#1a1714]"> 마크업</strong>과<strong className="font-medium text-[#1a1714]"> SEO 최적화</strong>
+                                    로 사용자의 실질적인 전환을 이끌어내는 데 집중합니다.
+                                </p>
+                                <p>
+                                    또한, 최신
+                                    <strong className="font-medium text-[#1a1714]">AI 기술</strong>
+                                    을 작업에 적극적으로 활용하여 효율을 높이고, 더 정교한
+                                    인터랙션과 코드 구조를 설계합니다
                                 </p>
 
                                 <a
@@ -228,8 +240,8 @@ export default function About() {
                                     target="_blank"
                                     rel="noreferrer"
                                     className={twMerge(
-                                        "flex items-center self-start",
-                                        "gap-3 px-5 py-2.5",
+                                        "flex items-center justify-center md:self-start",
+                                        "mt-8 gap-3 px-5 py-2.5 md:mt-5",
                                         "rounded-full border border-[#c9a96e]/40",
                                         "text-[11px] tracking-widest text-[#1a1714] uppercase",
                                         [
