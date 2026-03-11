@@ -13,7 +13,7 @@ const infoList = [
 
 const career = [
     {
-        period: "2025.09 — 2026.02",
+        period: "2025.09 — 2026.03",
         title: "라인컴퓨터 아트학원",
         sub: "Node.JS 기반 Open API를 활용한 응용 소프트웨어 개발자 양성 과정",
         desc: "React 프레임워크를 메인으로 하여 컴포넌트 기반 UI/UX 설계 및 상태 관리 학습. Node.js와 Open API를 연동하여 비동기 데이터를 실제 화면에 효율적으로 렌더링하는 퍼블리싱 기술 숙달.",
